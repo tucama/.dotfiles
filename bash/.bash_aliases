@@ -1,13 +1,9 @@
 # My aliases
 
 # some more ls aliases
-alias ls='exa'                            
-alias la='exa -a'                          
-alias l='exa -lbGF --color-scale '          
-alias ll='exa -lbGFa '                   
-
-# specialty views
-alias lt="exa --tree --level=3"  
+alias ll='ls -alch'
+alias la='ls -A'
+alias l='ls -CFlhtr'
 
 # connects to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"
@@ -64,12 +60,17 @@ export FZF_ALT_C_COMMAND="fdfind --type d . --color=never "
 export FZF_ALT_C_OPTS="--preview 'exa -TL 3 {}'"
 
 cd_with_fzf(){
+  cd $HOME && cd "$(fdfind -t d | fzf --height=50% --layout=reverse --preview="exa -TL 3 {}")"
+}
+
+cd_with_fzf_hidden(){
   cd $HOME && cd "$(fdfind -t d --hidden | fzf --height=50% --layout=reverse --preview="exa -TL 3 {}")"
 }
 
 open_with_fzf() {
-    fdfind-t f -H -I | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+    fdfind -t f -H -I | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
 }
 
 bind '"\es": "open_with_fzf\n"'
 bind '"\C-o": "cd_with_fzf\n"'
+bind '"\C-h": "cd_with_fzf_hidden\n"'
