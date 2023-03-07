@@ -117,5 +117,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-neofetch
-echo
