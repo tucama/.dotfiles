@@ -1,11 +1,14 @@
 # My aliases
 
-# some more ls aliases
-alias ll='ls -alch'
-alias la='ls -A'
-alias l='ls -CFlhtr'
 
-# connects to server
+alias cat='batcat --style=plain'
+
+alias l='exa -lF'
+alias la='exa -a'
+alias ll='exa -lFah'
+alias ls='exa --color=auto'
+
+# connect to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"
 
 
@@ -46,9 +49,6 @@ extract () {
 }
 export PATH="/home/tucamar/.local/bin/:$PATH"
 
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export FZF_DEFAULT_COMMAND="fdfind --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
 
@@ -69,3 +69,4 @@ open_with_fzf() {
 
 bind '"\es": "open_with_fzf\n"'
 bind '"\C-o": "cd_with_fzf\n"'
+
