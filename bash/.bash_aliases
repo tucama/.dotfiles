@@ -3,10 +3,10 @@
 
 alias cat='batcat --style=plain'
 
-alias l='exa -lF'
-alias la='exa -a'
-alias ll='exa -lFah'
-alias ls='exa --color=auto'
+alias l='lsd -lF'
+alias la='lsd -a'
+alias ll='lsd -lFah'
+alias ls='lsd --color=auto'
 
 # connect to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"

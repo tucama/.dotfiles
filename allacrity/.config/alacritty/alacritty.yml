@@ -429,7 +429,7 @@ colors: *gruvbox-dark
 ##       END OF COLOR SCHEMES        ##
 #######################################
 
-bell:
+# bell:
   # Values for `animation`:
   #   - Ease
   #   - EaseOut
@@ -441,9 +441,9 @@ bell:
   #   - EaseOutExpo
   #   - EaseOutCirc
   #   - Linear
-  animation: EaseOutExpo
-  duration: 10
-  color: '#ffffff'
+  # animation: EaseOutExpo
+  # duration: 10
+  # color: '#ffffff'
 
   # Bell Command
   #
