@@ -1,11 +1,13 @@
 # My aliases
 
+alias dot='cd ~/.dotfiles/'
 
+# rust stuff
 alias cat='batcat --style=plain'
 
-alias l='lsd -lF'
+alias l='lsd -lF --sort time'
 alias la='lsd -a'
-alias ll='lsd -lFah'
+alias ll='lsd -lFah --sort time'
 alias ls='lsd --color=auto'
 
 # connect to server

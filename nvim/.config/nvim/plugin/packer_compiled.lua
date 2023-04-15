@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -122,7 +117,7 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    url = "https://github.com/gruvbox-community/gruvbox"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -133,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  minimalist = {
+    loaded = true,
+    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/minimalist",
+    url = "https://github.com/dikiaap/minimalist"
   },
   ["null-ls.nvim"] = {
     loaded = true,

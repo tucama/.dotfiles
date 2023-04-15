@@ -6,6 +6,7 @@ vim.api.nvim_command([[
 vim.cmd ([[
 try
   colorscheme gruvbox
+  hi Normal guibg=NONE ctermbg=NONE
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
 endtry
