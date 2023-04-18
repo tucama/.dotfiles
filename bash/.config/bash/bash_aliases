@@ -1,9 +1,9 @@
-# My aliases
 
+# My aliases
 alias dot='cd ~/.dotfiles/ && vim .'
 
 # rust stuff
-alias cat='batcat --style=plain'
+alias cat='batcat'
 
 alias l='lsd -lF --sort time'
 alias la='lsd -a'

@@ -1,6 +1,11 @@
 export VISUAL="/usr/local/bin/nvim"
 export EDITOR="$VISUAL"
 
+# XDG Directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
@@ -78,21 +83,23 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# XDG Directories
-export XDG_CONFIG_HOME="$HOME/.config/"
-export XDG_DATA_HOME="$HOME/.local/share/"
-export XDG_CACHE_HOME="$HOME/.cache/"
-export XDG_STATE_HOME="$HOME/.local/state"
+
+# Rust's stuff
+export CARGO_HOME=$XDG_CONFIG_HOME/cargo
+export RUSTUP_HOME=$XDG_CONFIG_HOME/rustup
 
 # ssh-add
 export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # bash history
-export HISTFILE="$XDG_STATE_HOME"/bash/history
+export HISTFILE="$XDG_STATE_HOME/bash/history"
 
 
 [ -f ~/.config/bash/fzf.bash ] && source ~/.config/bash/fzf.bash
-[ -f ~/.config/bash/bash_rust ] && source ~/.config/bash/bash_rust
 [ -f ~/.config/bash/bash_aliases ] && source ~/.config/bash/bash_aliases
 
-. "$HOME/.config/cargo/env"
+. "/home/tucamar/.config/cargo/env"
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
