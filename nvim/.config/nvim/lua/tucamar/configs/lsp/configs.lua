@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "jsonls", "sumneko_lua", "pyright", "bashls" }
+local servers = { "jsonls", "sumneko_lua", "pyright", "bashls", "rust_analyzer" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
@@ -13,10 +13,10 @@ lsp_installer.setup({
 
 for _, server in pairs(servers) do
 	local opts = {
-		on_attach = require("user.configs.lsp.handlers").on_attach,
-		capabilities = require("user.configs.lsp.handlers").capabilities,
+		on_attach = require("tucamar.configs.lsp.handlers").on_attach,
+		capabilities = require("tucamar.configs.lsp.handlers").capabilities,
 	}
-	local has_custom_opts, server_custom_opts = pcall(require, "user.configs.lsp.settings." .. server)
+	local has_custom_opts, server_custom_opts = pcall(require, "tucamar.configs.lsp.settings." .. server)
 	if has_custom_opts then
 		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 	end

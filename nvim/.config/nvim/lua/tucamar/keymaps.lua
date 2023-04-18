@@ -16,27 +16,15 @@ vim.g.maplocalleader = " "
 --   insert_mode = "i",
 --   visual_mode = "v",
 --   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
+--   term_mode = "t", command_mode = "c",
 -- Go to vimrc
 keymap("n", "<leader>c", ":e $MYVIMRC<CR>", term_opts)
 -- Runs current buffers
 keymap("n", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)
 keymap("i", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)
 
-keymap("n", "<C-q>", "<CMD>q!<CR>", opts)
-keymap("n", "<C-s>", "<CMD>w<CR>", opts)
-
 keymap("n", "<leader>o", "o<Esc>k", opts)
 keymap("n", "<leader>O", "O<Esc>j", opts)
--- Normal --
-keymap("n", "<C-g>", ":lua _HTOP_TOGGLE()<CR>", opts)
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -73,8 +61,6 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 

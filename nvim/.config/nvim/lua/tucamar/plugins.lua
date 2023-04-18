@@ -53,37 +53,11 @@ return packer.startup(function(use)
 	use({ "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" })
 	use({ "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" }) -- line with buffers
 	use({ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" })  -- closes vim
-	use({ "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }) -- terminal
 	use({ "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" }) -- statusline
-  use( "dstein64/vim-startuptime" )
-  use{ "unblevable/quick-scope" }
+  use( "unblevable/quick-scope" )
   vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
-  use('glench/vim-jinja2-syntax')
- --  -- TODO learn how to use
-	-- use({ "Tastyep/structlog.nvim" })
-	-- use({ "nvim-lua/popup.nvim" })
- --  use({ "williamboman/mason-lspconfig.nvim" })
-	-- use({ "folke/which-key.nvim" })
- --  use {
- --      'goolord/alpha-nvim',
- --      requires = { 'kyazdani42/nvim-web-devicons' },
- --      config = function ()
- --        require'alpha'.setup(require'alpha.themes.startify'.config)
- --      end
- --  }
-	-- use({ "ahmedkhalf/project.nvim" })
-	-- use({ "lukas-reineke/indent-blankline.nvim" })
- --  use{
- --    'anuvyklack/pretty-fold.nvim',
- --    config = function()
- --      require('pretty-fold').setup()
- --     end
- --  }
-
 		-- Colorschemes
-
 	use("gruvbox-community/gruvbox")
-  use("dikiaap/minimalist")
 
 	-- cmp plugins
   use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- The completion plugin
@@ -101,13 +75,13 @@ return packer.startup(function(use)
 	use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
 	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+  -- use({ "williamboman/mason-lspconfig.nvim" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 
 	-- Treesitter
 	use({"nvim-treesitter/nvim-treesitter", commit = "518e27589c0463af15463c9d675c65e464efc2fe"})
-
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

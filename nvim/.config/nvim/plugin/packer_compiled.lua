@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  minimalist = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/minimalist",
-    url = "https://github.com/dikiaap/minimalist"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -194,25 +189,10 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-jinja2-syntax"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/vim-jinja2-syntax",
-    url = "https://github.com/glench/vim-jinja2-syntax"
-  },
-  ["vim-startuptime"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/vim-startuptime",
-    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,

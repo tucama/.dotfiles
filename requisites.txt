@@ -1,4 +1,5 @@
 stow
+rust
 fzf
 bat
 lsd
