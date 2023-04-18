@@ -95,4 +95,4 @@ export HISTFILE="$XDG_STATE_HOME"/bash/history
 [ -f ~/.config/bash/bash_rust ] && source ~/.config/bash/bash_rust
 [ -f ~/.config/bash/bash_aliases ] && source ~/.config/bash/bash_aliases
 
-. "$HOME/.cargo/env"
+. "$HOME/.config/cargo/env"
