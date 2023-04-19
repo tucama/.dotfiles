@@ -7,9 +7,9 @@ window:
    y: 300
   padding:
    x: 30
-   y: 30
+   y: 20
   decorations: full #full/none
-  opacity: 0.78
+  opacity: 0.65
   startup_mode: Fullscreen #Windowed/Maximized/Fullscreen
   title: Alacritty
   dynamic_title: true
