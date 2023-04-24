@@ -103,3 +103,5 @@ export HISTFILE="$XDG_STATE_HOME/bash/history"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
