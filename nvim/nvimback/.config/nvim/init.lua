@@ -1,0 +1,5 @@
+require "tucamar.options"
+require "tucamar.keymaps"
+require "tucamar.plugins"
+require "tucamar.colorscheme"
+require "tucamar.configs"
