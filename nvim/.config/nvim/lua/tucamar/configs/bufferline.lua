@@ -73,7 +73,7 @@ bufferline.setup {
   },
   highlights = {
     fill = {
-      guifg = { attribute = "fg", highlight = "ff0000" },
+      guifg = { attribute = "fg", highlight = "#ff0000" },
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
     background = {
@@ -82,8 +82,8 @@ bufferline.setup {
     },
 
     buffer_selected = {
-      guifg = {attribute = "fg", highlight = "ff0000"},
-      guibg = {attribute = "bg", highlight = "0000ff"},
+      guifg = {attribute = "fg", highlight = "#ff0000"},
+      guibg = {attribute = "bg", highlight = "#0000ff"},
       gui = "bold,italic"
       },
     buffer_visible = {
@@ -105,8 +105,8 @@ bufferline.setup {
     --   },
 
     tab_selected = {
-      guifg = { attribute = "fg", highlight = "ff0000" },
-      guibg = { attribute = "bg", highlight = "0000ff" },
+      guifg = { attribute = "fg", highlight = "#ff0000" },
+      guibg = { attribute = "bg", highlight = "#0000ff" },
     },
     tab = {
       guifg = { attribute = "fg", highlight = "TabLine" },
