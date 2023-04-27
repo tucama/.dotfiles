@@ -12,6 +12,7 @@ alias ls='lsd --color=auto'
 
 # connect to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"
+alias sshpc="ssh -p 9123 sshpc@localhost"
 
 
 # goes back x dirs
