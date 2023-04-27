@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-  ensure_installed = { "help", "python", "bash", "c", "lua", "rust" },
+  ensure_installed = { "python", "bash", "c", "lua", "rust" },
   sync_install = false,
   auto_install = true,
 	highlight = {
