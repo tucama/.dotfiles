@@ -49,7 +49,7 @@ extract () {
       echo "'$1' is not a valid file!"
   fi
 }
-export PATH="/home/tucamar/.local/bin/:$PATH"
+export PATH="/home/tucamar/.local/bin:/home/tucamar/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tucamar/.config/fzf/bin"
 
 export FZF_DEFAULT_COMMAND="fdfind --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"

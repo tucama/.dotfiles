@@ -1,4 +1,5 @@
 require "tucamar.configs.cmp"
+require "tucamar.configs.alpha"
 require "tucamar.configs.lsp"
 require "tucamar.configs.telescope"
 require "tucamar.configs.treesitter"
