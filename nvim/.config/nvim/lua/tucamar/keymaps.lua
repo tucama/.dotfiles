@@ -18,7 +18,10 @@ vim.g.maplocalleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t", command_mode = "c",
 -- Go to vimrc
-keymap("n", "<leader>c", ":e $MYVIMRC<CR>", term_opts)
+keymap("n", "<leader>cv", ":e $MYVIMRC<CR>", term_opts)
+-- Go to dot files
+keymap("n", "<leader>cd", ":e $HOME/mydotfiles<CR>", term_opts)
+
 -- Runs current buffers
 keymap("n", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)
 keymap("i", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)

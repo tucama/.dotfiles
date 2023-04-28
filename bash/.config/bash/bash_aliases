@@ -1,6 +1,6 @@
 
 # My aliases
-alias dot='cd ~/.dotfiles/ && vim .'
+alias dot='cd ~/mydotfiles/'
 
 # rust stuff
 alias cat='batcat'
