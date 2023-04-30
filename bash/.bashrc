@@ -84,6 +84,7 @@ if ! shopt -oq posix; then
 fi
 
 
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 # Rust's stuff
 export CARGO_HOME=$XDG_CONFIG_HOME/cargo
 export RUSTUP_HOME=$XDG_CONFIG_HOME/rustup

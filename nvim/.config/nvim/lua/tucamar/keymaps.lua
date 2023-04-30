@@ -19,9 +19,12 @@ vim.g.maplocalleader = " "
 --   term_mode = "t", command_mode = "c",
 -- Go to vimrc
 keymap("n", "<leader>cv", ":e $MYVIMRC<CR>", term_opts)
+keymap("n", "<leader>r", ":source $MYVIMRC<CR>", term_opts)
 -- Go to dot files
 keymap("n", "<leader>cd", ":e $HOME/mydotfiles<CR>", term_opts)
 
+asdfa
+keymap("n", "<C-s>", ":w<CR>", term_opts)
 -- Runs current buffers
 keymap("n", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)
 keymap("i", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)
@@ -38,7 +41,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "L", ":bnext<CR>", opts)
 keymap("n", "H", ":bprevious<CR>", opts)
-keymap("n", "<leader>d", ":bdelete!<CR>", opts)
+keymap("n", "<leader>dd", ":bdelete!<CR>", opts)
+keymap("n", "<leader>df", ":close<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)

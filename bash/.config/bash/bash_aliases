@@ -52,22 +52,22 @@ extract () {
 }
 export PATH="/home/tucamar/.local/bin:/home/tucamar/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tucamar/.config/fzf/bin"
 
-export FZF_DEFAULT_COMMAND="fdfind --type f --color=never --hidden"
+export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--height=70% --preview 'batcat --color=always --line-range :50 {}'"
 
 
-export FZF_ALT_C_COMMAND="fdfind --type d . --color=never "
+export FZF_ALT_C_COMMAND="fd --type d . --color=never "
 export FZF_ALT_C_OPTS="--preview 'exa -TL 3 {}'"
 
 cd_with_fzf(){
-  cd $HOME && cd "$(fdfind -t d | fzf --height=50% --layout=reverse --preview="exa -TL 3 {}")"
+  cd $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="exa -TL 3 {}")"
 }
 
 open_with_fzf() {
-    fdfind -t f -H -I | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+    fd -t f -H -I | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
 }
 
 bind '"\es": "open_with_fzf\n"'
