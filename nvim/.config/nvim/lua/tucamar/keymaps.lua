@@ -23,7 +23,6 @@ keymap("n", "<leader>r", ":source $MYVIMRC<CR>", term_opts)
 -- Go to dot files
 keymap("n", "<leader>cd", ":e $HOME/mydotfiles<CR>", term_opts)
 
-asdfa
 keymap("n", "<C-s>", ":w<CR>", term_opts)
 -- Runs current buffers
 keymap("n", "<F9>", "<Esc>:w<enter>:! chmod +x %<enter>:! %<enter>", term_opts)
