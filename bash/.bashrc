@@ -8,7 +8,10 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
-
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+bind 'set completion-ignore-case on'
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
