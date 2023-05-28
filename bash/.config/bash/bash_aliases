@@ -60,10 +60,10 @@ export FZF_CTRL_T_OPTS="--height=70% --preview 'bat --color=always --line-range 
 
 
 export FZF_ALT_C_COMMAND="fd --type d . --color=never "
-export FZF_ALT_C_OPTS="--preview 'exa -TL 3 {}'"
+export FZF_ALT_C_OPTS="--preview 'lsd --tree --depth 3 {}'"
 
 cd_with_fzf(){
-  cd $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="exa -TL 3 {}")"
+  cd $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
 }
 
 open_with_fzf() {
