@@ -56,7 +56,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--height=70% --preview 'batcat --color=always --line-range :50 {}'"
+export FZF_CTRL_T_OPTS="--height=70% --preview 'bat --color=always --line-range :50 {}'"
 
 
 export FZF_ALT_C_COMMAND="fd --type d . --color=never "
