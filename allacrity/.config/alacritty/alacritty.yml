@@ -8,9 +8,9 @@ window:
   padding:
    x: 30
    y: 10
-  decorations: full #full/none
+  decorations: none #full/none
   opacity: 0.9
-  startup_mode: Fullscreen #Windowed/Maximized/Fullscreen
+  startup_mode: Maximized #Windowed/Maximized/Fullscreen
   title: Alacritty
   dynamic_title: true
   class:

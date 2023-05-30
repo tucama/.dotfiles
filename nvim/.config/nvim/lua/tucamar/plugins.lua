@@ -1,28 +1,3 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
-end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -40,46 +15,58 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- Is using a standard Neovim install, i.e. built from source or using a
-  -- provided appimage.
-	-- My plugins here
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-  use('lewis6991/impatient.nvim')
-  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-	use( "tpope/vim-surround" )
+	use({ "tpope/vim-surround" })
 	use({ "numToStr/Comment.nvim" })
-	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "akinsho/bufferline.nvim" }) -- line with buffers
-	use({ "moll/vim-bbye" })  -- closes vim
 	use({ "nvim-lualine/lualine.nvim" }) -- statusline
-	use({ "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" })
-  use( "unblevable/quick-scope" )
+	use({ "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243", requires="kyazdani42/nvim-web-devicons" })
+  use({ "unblevable/quick-scope" })
   vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
-		-- Colorschemes
-	use("gruvbox-community/gruvbox")
-  use { "catppuccin/nvim", as = "catppuccin" }
-	-- cmp plugins
-  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
-  use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
+  use({ "nvim-treesitter/playground" })
+  use({ "theprimeagen/harpoon" })
+  use({ "theprimeagen/refactoring.nvim" })
+  use({ "mbbill/undotree" })
+  use({ "tpope/vim-fugitive" })
+  use({ "nvim-treesitter/nvim-treesitter-context" })
 
-	-- snippets
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
+  -- Colorschemes
+	use({ "gruvbox-community/gruvbox" })
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" })
 
 	-- Treesitter
+  use({
+			'nvim-treesitter/nvim-treesitter',
+			run = function()
+				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+				ts_update()
+			end,})
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
+
+  -- LSP
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},
+      {'williamboman/mason-lspconfig.nvim'},
+		  {'williamboman/mason.nvim'},
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
+  }
 end)
 

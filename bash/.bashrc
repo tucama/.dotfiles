@@ -11,7 +11,9 @@ export XDG_STATE_HOME="$HOME/.local/state"
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-bind 'set completion-ignore-case on'
+
+# bind 'set completion-ignore-case on'
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -98,6 +100,8 @@ export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # bash history
 export HISTFILE="$XDG_STATE_HOME/bash/history"
 
+# Wine
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 [ -f ~/.config/bash/fzf.bash ] && source ~/.config/bash/fzf.bash
 [ -f ~/.config/bash/bash_aliases ] && source ~/.config/bash/bash_aliases
