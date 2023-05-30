@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -129,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -154,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -164,25 +159,10 @@ _G.packer_plugins = {
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
   ["quick-scope"] = {
     loaded = true,
     path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/quick-scope",
     url = "https://github.com/unblevable/quick-scope"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/home/tucamar/.local/share/nvim/site/pack/packer/start/vim-bbye",
-    url = "https://github.com/moll/vim-bbye"
   },
   ["vim-surround"] = {
     loaded = true,

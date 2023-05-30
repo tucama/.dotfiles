@@ -44,21 +44,17 @@ return packer.startup(function(use)
   -- provided appimage.
 	-- My plugins here
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
-  use('lewis6991/impatient.nvim')
-  use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 	use( "tpope/vim-surround" )
 	use({ "numToStr/Comment.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({ "akinsho/bufferline.nvim" }) -- line with buffers
-	use({ "moll/vim-bbye" })  -- closes vim
 	use({ "nvim-lualine/lualine.nvim" }) -- statusline
 	use({ "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" })
   use( "unblevable/quick-scope" )
   vim.g.qs_highlight_on_keys = {'f', 'F', 't', 'T'}
 		-- Colorschemes
 	use("gruvbox-community/gruvbox")
-  use { "catppuccin/nvim", as = "catppuccin" }
 	-- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
@@ -72,9 +68,9 @@ return packer.startup(function(use)
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" })
 
 	-- Treesitter
+  use({ "nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'} })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

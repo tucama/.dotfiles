@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -36,6 +35,9 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
 
 -- Navigate buffers
 keymap("n", "L", ":bnext<CR>", opts)
