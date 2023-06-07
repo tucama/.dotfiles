@@ -1,6 +1,6 @@
 
 # My aliases
-alias dot='cd ~/mydotfiles/'
+alias dot='cd ~/.dotfiles/'
 
 # rust stuff
 alias cat='bat -p'
