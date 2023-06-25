@@ -9,6 +9,7 @@ alias l='lsd -lF --sort time'
 alias la='lsd -a'
 alias ll='lsd -lFah --sort time'
 alias ls='lsd --color=auto'
+alias lst='lsd --tree --color=auto'
 
 # connect to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"

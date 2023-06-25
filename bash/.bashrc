@@ -21,10 +21,13 @@ case $- in
 esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
-# append to the history file, don't overwrite it
+#
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+# append history entries..
 shopt -s histappend
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 HISTSIZE=1000
 HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
@@ -97,8 +100,6 @@ export RUSTUP_HOME=$XDG_CONFIG_HOME/rustup
 # ssh-add
 export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# bash history
-export HISTFILE="$XDG_STATE_HOME/bash/history"
 
 # Wine
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default

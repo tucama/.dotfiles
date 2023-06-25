@@ -1,6 +1,13 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust" },
+  autotag = {
+      filetypes = {"html", "xml"},
+      enable_rename = true,
+      enable_close = true,
+      enable_close_on_slash = true,
+      enable = true,
+  },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

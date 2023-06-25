@@ -10,4 +10,11 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
+local status_ok, colorizer = pcall(require, "colorizer")
+if not status_ok then
+  return
+end
+
+colorizer.setup()
+
 ColorMyPencils()
