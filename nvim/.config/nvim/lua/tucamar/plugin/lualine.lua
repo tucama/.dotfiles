@@ -73,3 +73,5 @@ lualine.setup({
 	tabline = {},
 	extensions = {},
 })
+
+require("bufferline").setup{}

@@ -11,32 +11,32 @@ end
 require("luasnip.loaders.from_snipmate").lazy_load()
 
 local kind_icons = {
-      Text = "󰉿",
-      Method = "󰆧",
-      Function = "󰊕",
-      Constructor = "",
-      Field = " ",
-      Variable = "󰀫",
-      Class = "󰠱",
-      Interface = "",
-      Module = "",
-      Property = "󰜢",
-      Unit = "󰑭",
-      Value = "󰎠",
-      Enum = "",
-      Keyword = "󰌋",
-      Snippet = "",
-      Color = "󰏘",
-      File = "󰈙",
-      Reference = "",
-      Folder = "󰉋",
-      EnumMember = "",
-      Constant = "󰏿",
-      Struct = "",
-      Event = "",
-      Operator = "󰆕",
-      TypeParameter = " ",
-      Misc = " ",
+    Text = "󰉿",
+    Method = "󰆧",
+    Function = "󰊕",
+    Constructor = "",
+    Field = " ",
+    Variable = "󰀫",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "",
+    Color = "󰏘",
+    File = "󰈙",
+    Reference = "",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = " ",
+    Misc = " ",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -103,10 +103,17 @@ cmp.setup {
     sources = {
         { name = "path" },
         { name = "luasnip" },
-        { name = "nvim_lsp" },
+        {
+            name = "nvim_lsp",
+            entry_filter = function(entry, _)
+                if entry:get_kind() == 15 then
+                    return false
+                end
+                return true
+            end
+        },
         { name = "buffer" },
     },
-
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
@@ -118,4 +125,3 @@ cmp.setup {
         ghost_text = true,
     },
 }
-

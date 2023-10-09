@@ -26,7 +26,7 @@ return packer.startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     })
-
+    use({ 'tweekmonster/django-plus.vim' })
     use({ 'ellisonleao/gruvbox.nvim' })
     use("nvim-treesitter/nvim-treesitter-context");
     use {
@@ -47,7 +47,7 @@ return packer.startup(function(use)
     use({ "numToStr/Comment.nvim" })        -- commenting shortcut "gcc"
     use({ "kyazdani42/nvim-web-devicons" }) -- icons
     use({ "unblevable/quick-scope" })       -- highlights unique chars in words
-
+    use({ "akinsho/bufferline.nvim" })       -- highlights unique chars in words
     use({ "nvim-lualine/lualine.nvim" })    -- statusline
     use({ "kyazdani42/nvim-tree.lua" })     -- file tree
     use({ "norcalli/nvim-colorizer.lua" })  -- colorize rgb, hex color

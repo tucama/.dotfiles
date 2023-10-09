@@ -8,7 +8,7 @@ if not config_status_ok then
     return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
     update_focused_file = {
@@ -51,13 +51,12 @@ nvim_tree.setup {
         enable = true,
         show_on_dirs = true,
         icons = {
-            Hint = "󱩎",
+            hint = "󱩎",
             info = "",
             warning = "",
             error = "",
         },
     },
-    on_attach = on_attach,
     view = {
         width = 30,
         side = "left",

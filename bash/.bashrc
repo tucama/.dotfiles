@@ -6,6 +6,28 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
+# Bash history
+mkdir -p "$XDG_STATE_HOME"/bash
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+#Inputrc
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+# Rust's stuff
+export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
+export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+# ssh-add
+export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# Pipenv
+export PIPENV_VENV_IN_PROJECT=1
+# WEG
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+# PostgreSQL var
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PSQL_HISTORY="$XDG_STATE_HOME/psql_history" 
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass" 
+export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+# Python envs
+export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
+export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -90,19 +112,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
-export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
-# Rust's stuff
-export CARGO_HOME=$XDG_CONFIG_HOME/cargo
-export RUSTUP_HOME=$XDG_CONFIG_HOME/rustup
-
-# ssh-add
-export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-
-# Wine
-export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 [ -f ~/.config/bash/fzf.bash ] && source ~/.config/bash/fzf.bash
 [ -f ~/.config/bash/bash_aliases ] && source ~/.config/bash/bash_aliases
