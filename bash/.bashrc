@@ -1,4 +1,4 @@
-export VISUAL="/usr/local/bin/nvim"
+export VISUAL="/home/tucamar/.local/share/bob/nvim-bin/nvim"
 export EDITOR="$VISUAL"
 
 # XDG Directories

@@ -27,7 +27,6 @@ return packer.startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     })
     use({ 'tweekmonster/django-plus.vim' })
-    use({ 'ellisonleao/gruvbox.nvim' })
     use("nvim-treesitter/nvim-treesitter-context");
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -37,9 +36,8 @@ return packer.startup(function(use)
         end, }
     -- use("nvim-treesitter/playground")
     -- use("theprimeagen/refactoring.nvim")
-    use("theprimeagen/harpoon")
-    use("mbbill/undotree")
-    use("tpope/vim-fugitive")
+    use({ "theprimeagen/harpoon" })
+    use({ "tpope/vim-fugitive" })
     use({ "goolord/alpha-nvim" })           -- Autopairs, integrates with both cmp and treesitter
     use({ "windwp/nvim-autopairs" })        -- Autopairs, integrates with both cmp and treesitter
     use({ "windwp/nvim-ts-autotag" })       -- Autopairs, integrates with both cmp and treesitter
@@ -49,6 +47,7 @@ return packer.startup(function(use)
     use({ "unblevable/quick-scope" })       -- highlights unique chars in words
     use({ "akinsho/bufferline.nvim" })       -- highlights unique chars in words
     use({ "nvim-lualine/lualine.nvim" })    -- statusline
+    use({ 'ellisonleao/gruvbox.nvim' })
     use({ "kyazdani42/nvim-tree.lua" })     -- file tree
     use({ "norcalli/nvim-colorizer.lua" })  -- colorize rgb, hex color
     use {

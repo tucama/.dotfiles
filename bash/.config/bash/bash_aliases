@@ -1,8 +1,7 @@
-# Vim
-alias v='nvim'
-
 # My aliases
 alias dot='cd ~/.dotfiles/'
+
+alias v='nvim'
 
 # rust stuff
 alias cat='bat -p'
@@ -39,6 +38,7 @@ extract () {
       *.tar.bz2)   tar xvjf "$1"    ;;
       *.tar.gz)    tar xvzf "$1"    ;;
       *.tar.xf)    tar -xf "$1"     ;;
+      *.tar.xz)    tar -xf "$1"     ;;
       *.bz2)       bunzip2 "$1"     ;;
       *.rar)       unrar x "$1"     ;;
       *.gz)        gunzip "$1"      ;;
@@ -54,7 +54,7 @@ extract () {
       echo "'$1' is not a valid file!"
   fi
 }
-export PATH="/home/tucamar/.local/bin:/home/tucamar/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tucamar/.config/fzf/bin"
+export PATH="/home/tucamar/.local/share/python/bin:/home/tucamar/.local/share/bob/nvim-bin:/home/tucamar/.local/bin:/home/tucamar/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/tucamar/.config/fzf/bin"
 
 export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
