@@ -1,17 +1,20 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-    return
-end
+return {
+  "nvim-tree/nvim-tree.lua",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
+    local nvimtree = require("nvim-tree")
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-    return
-end
+    -- recommended settings from nvim-tree documentation
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
 
--- local tree_cb = nvim_tree_config.nvim_tree_callback
+    -- change color for arrows in tree to light blue
+    vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
+    vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
-nvim_tree.setup {
-    update_focused_file = {
+    -- configure nvim-tree
+    nvimtree.setup({
+            update_focused_file = {
         enable = true,
         update_cwd = true,
     },
@@ -60,10 +63,6 @@ nvim_tree.setup {
     view = {
         width = 30,
         side = "left",
-        mappings = {
-            list = {
-            },
-        },
     },
     actions = {
         use_system_clipboard = true,
@@ -82,10 +81,16 @@ nvim_tree.setup {
                 enable = true,
                 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
                 exclude = {
-                    filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+                    filetype = { "notify", "qf", "diff", "fugitive", "fugitiveblame" },
                     buftype = { "nofile", "terminal", "help" },
                 },
             },
         },
     },
+    })
+
+    -- set keymaps
+    local keymap = vim.keymap -- for conciseness
+    keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+  end,
 }

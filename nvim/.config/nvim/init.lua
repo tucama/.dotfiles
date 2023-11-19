@@ -1,3 +1,2 @@
-require("tucamar")
-
-
+require("tucamar.core")
+require("tucamar.lazy")
