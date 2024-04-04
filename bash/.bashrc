@@ -118,8 +118,14 @@ fi
 
 . "/home/tucamar/.config/cargo/env"
 
+
+# start tmux with terminal
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
+fi
+
+if [ "$SHLVL" = 1 ]; then
+    [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

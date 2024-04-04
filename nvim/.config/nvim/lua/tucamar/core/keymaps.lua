@@ -4,7 +4,7 @@ local keymap = vim.keymap.set
 --Remap space as leader key
 vim.g.mapleader = " "
 
-keymap("n", "<leader>cv", ":e $MYVIMRC<CR>", { desc = "Edit Neovim config" } )
+keymap("n", "<leader>cv", ":e $MYVIMRC<CR>", { desc = "Edit Neovim config" })
 keymap("n", "<leader>r", ":source $MYVIMRC<CR>", { desc = "Reload Neovim config" })
 
 keymap("n", "<leader>cd", ":e $HOME/mydotfiles<CR>", { desc = "Edit dotfiles" })
@@ -23,6 +23,8 @@ keymap("n", "<leader>O", "O<Esc>j", { desc = "Empty line above" })
 keymap("n", "J", "mzJ`z")
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "<S-Down>", "<C-d>zz")
+keymap("n", "<S-Up>", "<C-u>zz")
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
@@ -64,7 +66,7 @@ keymap("n", "<leader><C-a>", "ggVG", { desc = "Select all" })
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv")
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = "Turn file executable"} )
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = "Turn file executable" })
 
 -- Lsp diagnostics
 keymap("n", "<leader>le", ":lua vim.diagnostic.enable()<CR>")
