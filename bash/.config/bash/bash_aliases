@@ -1,5 +1,5 @@
 # My aliases
-alias dot='cd ~/.dotfiles/'
+alias dot='cd $HOME/.dotfiles/'
 
 alias v='nvim'
 alias vmdt='vmd -dispdev text'
@@ -22,7 +22,7 @@ alias sshpc="ssh -p 9123 sshpc@localhost"
 up() { cd "$(eval printf '../%.0s' "{1..$1}")" || exit; }
 
 # gets git token
-alias token="cat ~/.gittoken"
+alias token="cat $HOME/.gittoken"
 
 # easy git push
 lazygit ()
@@ -56,7 +56,7 @@ extract () {
       echo "'$1' is not a valid file!"
   fi
 }
-export PATH="/home/tucamar/.local/share/python/bin:/home/tucamar/.local/bin:/home/tucamar/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:/home/tucamar/.config/fzf/bin"
+export PATH="$HOME/.local/share/python/bin:$HOME/.local/bin:$HOME/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:$HOME/.config/fzf/bin"
 
 export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"

@@ -1,4 +1,4 @@
-export VISUAL="/home/tucamar/.local/share/bob/nvim-bin/nvim"
+export VISUAL="$HOME/.local/share/bob/nvim-bin/nvim"
 export EDITOR="$VISUAL"
 
 # XDG Directories
@@ -29,7 +29,7 @@ export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# $HOME/.bashrc: executed by bash(1) for non-login shells.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
@@ -94,7 +94,7 @@ xterm*|rxvt*)
 esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -113,10 +113,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f ~/.config/bash/fzf.bash ] && source ~/.config/bash/fzf.bash
-[ -f ~/.config/bash/bash_aliases ] && source ~/.config/bash/bash_aliases
+[ -f $HOME/.config/bash/fzf.bash ] && source $HOME/.config/bash/fzf.bash
+[ -f $HOME/.config/bash/bash_aliases ] && source $HOME/.config/bash/bash_aliases
 
-. "/home/tucamar/.config/cargo/env"
+. "$HOME/.config/cargo/env"
 
 
 # start tmux with terminal
@@ -128,4 +128,4 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
