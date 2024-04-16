@@ -1,34 +1,6 @@
-export VISUAL="$HOME/.local/share/bob/nvim-bin/nvim"
-export EDITOR="$VISUAL"
+[ -f $HOME/.config/bash/bash_variables ] && source $HOME/.config/bash/bash_variables
 
-# XDG Directories
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_STATE_HOME="$HOME/.local/state"
-# Bash history
-mkdir -p "$XDG_STATE_HOME"/bash
-export HISTFILE="$XDG_STATE_HOME/bash/history"
-#Inputrc
-export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
-# Rust's stuff
-export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
-export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
-# ssh-add
-export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-# Pipenv
-export PIPENV_VENV_IN_PROJECT=1
-# WEG
-export WGETRC="$XDG_CONFIG_HOME/wgetrc"
-# PostgreSQL var
-export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
-export PSQL_HISTORY="$XDG_STATE_HOME/psql_history" 
-export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass" 
-export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
-# Python envs
-export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
-export PYTHONUSERBASE="$XDG_DATA_HOME/python"
-
+############################## beginning of default file ############################################
 # $HOME/.bashrc: executed by bash(1) for non-login shells.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -113,10 +85,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+############################## end of default file ############################################
+
 [ -f $HOME/.config/bash/fzf.bash ] && source $HOME/.config/bash/fzf.bash
 [ -f $HOME/.config/bash/bash_aliases ] && source $HOME/.config/bash/bash_aliases
-
-. "$HOME/.config/cargo/env"
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
+[ -f $HOME/.config/cargo/env ] && source "$HOME/.config/cargo/env"
 
 
 # start tmux with terminal
@@ -128,4 +102,3 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
-[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash

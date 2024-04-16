@@ -84,3 +84,4 @@ bind '"\es": "open_with_fzf\n"'
 bind '"\C-o": "cd_with_fzf\n"'
 bind '"\C-y": "cd_with_fzf_within\n"'
 
+eval "$(zoxide init bash)"
