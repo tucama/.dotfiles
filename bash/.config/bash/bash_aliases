@@ -7,11 +7,13 @@ alias vmdt='vmd -dispdev text'
 # rust stuff
 alias cat='bat -p'
 
-alias l='lsd -lF --sort time'
-alias la='lsd -a'
-alias ll='lsd -lFah --sort time'
-alias ls='lsd --color=auto'
-alias lst='lsd --tree --color=auto --depth 3'
+if [ -f $CARGO_HOME/bin/lsd ]; then
+    alias l='lsd -lF --sort time'
+    alias la='lsd -a'
+    alias ll='lsd -lFah --sort time'
+    alias ls='lsd --color=auto'
+    alias lst='lsd --tree --color=auto --depth 3'
+fi
 
 # connect to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"
@@ -23,14 +25,6 @@ up() { cd "$(eval printf '../%.0s' "{1..$1}")" || exit; }
 
 # gets git token
 alias token="cat $HOME/.gittoken"
-
-# easy git push
-lazygit ()
-{
-  git add .
-  git commit -m "${1}"
-  git push
-}
 
 # extracts files
 extract () {
@@ -56,7 +50,6 @@ extract () {
       echo "'$1' is not a valid file!"
   fi
 }
-export PATH="$HOME/.local/share/python/bin:$HOME/.local/bin:$HOME/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:$HOME/.config/fzf/bin"
 
 export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
@@ -68,16 +61,26 @@ export FZF_CTRL_T_OPTS="--height=70% --preview 'bat --color=always --line-range 
 export FZF_ALT_C_COMMAND="fd --type d . --color=never "
 export FZF_ALT_C_OPTS="--preview 'lsd --tree --depth 3 {}'"
 
-cd_with_fzf(){
-  cd $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
-}
+if [ -f "${CARGO_HOME}/bin/zoxide" ]; then
+    cd_with_fzf(){
+      z $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
+    }
 
-cd_with_fzf_within(){
-  cd "$(fd -t d -H | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
-}
+    cd_with_fzf_within(){
+      z "$(fd -t d -H | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
+    }
+else
+    cd_with_fzf(){
+      cd $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
+    }
+
+    cd_with_fzf_within(){
+      cd "$(fd -t d -H | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
+    }
+fi
 
 open_with_fzf() {
-    fd -t f -H -I | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+    fd -t f -H -I $HOME/Documents/ | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
 }
 
 bind '"\es": "open_with_fzf\n"'

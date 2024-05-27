@@ -4,10 +4,11 @@ local keymap = vim.keymap.set
 --Remap space as leader key
 vim.g.mapleader = " "
 
-keymap("n", "<leader>cv", ":e $MYVIMRC<CR>", { desc = "Edit Neovim config" })
-keymap("n", "<leader>r", ":source $MYVIMRC<CR>", { desc = "Reload Neovim config" })
+-- keymap("n", "<leader>cv", ":edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
+keymap("n", "<leader>cv", ":cd $XDG_CONFIG_HOME/nvim | edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
+keymap("n", "<leader>rv", ":source $MYVIMRC<CR>", { desc = "Reload Neovim config" })
 
-keymap("n", "<leader>cd", ":e $HOME/mydotfiles<CR>", { desc = "Edit dotfiles" })
+keymap("n", "<leader>cd", ":edit $HOME/.dotfiles<CR>", { desc = "Edit dotfiles" })
 
 keymap("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 

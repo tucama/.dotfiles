@@ -1,8 +1,6 @@
 
-export VISUAL="$HOME/.local/share/bob/nvim-bin/nvim"
+export VISUAL="/usr/local/bin/nvim"
 export EDITOR="$VISUAL"
-
-export PATH="$HOME/.local/share/python/bin:$HOME/.local/bin:$HOME/.config/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/snap/bin:$HOME/.config/fzf/bin"
 
 # XDG Directories
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -31,4 +29,18 @@ export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 # Python envs
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
+
+export PATH=$(tr -d $'\n ' <<< "
+$HOME/.local/bin:
+$CARGO_HOME/bin:
+/usr/local/sbin:
+/usr/local/bin:
+/usr/sbin:
+/usr/bin:
+/sbin:
+/bin:
+/usr/games:
+/snap/bin:
+$XDG_DATA_HOME/python/bin:
+$XDG_CONFIG_HOME/fzf/bin")
 
