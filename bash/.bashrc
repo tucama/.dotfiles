@@ -1,5 +1,5 @@
 [ -f $HOME/.config/bash/bash_variables ] && source $HOME/.config/bash/bash_variables
-
+stty stop ''; stty start '';
 ############################## beginning of default file ############################################
 # $HOME/.bashrc: executed by bash(1) for non-login shells.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
