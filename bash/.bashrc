@@ -1,5 +1,5 @@
 [ -f $HOME/.config/bash/bash_variables ] && source $HOME/.config/bash/bash_variables
-stty stop ''; stty start '';
+
 ############################## beginning of default file ############################################
 # $HOME/.bashrc: executed by bash(1) for non-login shells.
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -102,3 +102,5 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
+export PATH="$PATH:/opt/mopac/bin"
+. /opt/amber24/amber.sh

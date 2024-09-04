@@ -8,9 +8,9 @@ alias vmdt='vmd -dispdev text'
 alias cat='bat -p'
 
 if [ -f $CARGO_HOME/bin/lsd ]; then
-    alias l='lsd -lF --sort time'
+    alias l='lsd -lF'
     alias la='lsd -a'
-    alias ll='lsd -lFah --sort time'
+    alias ll='lsd -lFah' 
     alias ls='lsd --color=auto'
     alias lst='lsd --tree --color=auto --depth 3'
 fi
@@ -19,6 +19,7 @@ fi
 alias server="ssh -p 9022 tucamar@150.165.131.12"
 alias sshpc="ssh -p 9123 sshpc@localhost"
 
+alias lqqc="ssh arthur@150.165.150.105"
 
 # goes back x dirs
 up() { cd "$(eval printf '../%.0s' "{1..$1}")" || exit; }
@@ -44,6 +45,7 @@ extract () {
       *.zip)       unzip "$1"       ;;
       *.Z)         uncompress "$1"  ;;
       *.7z)        7z x "$1"        ;;
+      *.xz)         xz -d "$1"       ;;
       *)           echo "don't know how to extract '$1'..." ;;
     esac
   else
@@ -54,8 +56,8 @@ extract () {
 export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
 
-# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# export FZF_CTRL_T_OPTS="--height=70% --preview 'bat --color=always --line-range :50 {}'"
+export FZF_CTRL_F_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_F_OPTS="--height=70% --preview 'bat --color=always --line-range :50 {}'"
 
 
 export FZF_ALT_C_COMMAND="fd --type d . --color=never "
@@ -82,6 +84,7 @@ fi
 open_with_fzf() {
     fd -t f -H -I $HOME/Documents/ | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
 }
+
 
 bind '"\es": "open_with_fzf\n"'
 bind '"\C-o": "cd_with_fzf\n"'
