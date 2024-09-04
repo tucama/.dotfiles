@@ -39,5 +39,6 @@
   "vim-snippets": { "branch": "master", "commit": "393d980157b8149b3ff65a48bc4aae24dca9c846" },
   "vim-surround": { "branch": "master", "commit": "aeb933272e72617f7c4d35e1f003be16836b948d" },
   "vimtex": { "branch": "master", "commit": "9f6a5bb0a9c9f1542fe88dc07511ce8401242e2a" },
-  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
+  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
+  "wrapping.nvim": { "branch": "master", "commit": "3a823200c297885b70515fa8d974e1763c578e26" }
 }
