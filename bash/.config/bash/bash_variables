@@ -39,7 +39,7 @@ $CARGO_HOME/bin:
 /usr/bin:
 /sbin:
 /bin:
-/opt
+/opt/bin:
 /snap/bin:
 $XDG_DATA_HOME/python/bin:
 $XDG_CONFIG_HOME/fzf/bin")
