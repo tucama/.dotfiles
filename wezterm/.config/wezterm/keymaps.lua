@@ -1,10 +1,13 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local config = {
-    leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 },
-    keys = {
+
+local keymaps = {}
+
+function keymaps.apply_to_config(c)
+    c.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
+    c.keys = {
         -- Send C-a when pressing C-a twice
-        { key = "a",          mods = "LEADER|CTRL", action = act.SendKey { key = "a", mods = "CTRL" } },
+        { key = "Space",          mods = "LEADER|CTRL", action = act.SendKey { key = "Space", mods = "CTRL" } },
         { key = "c",          mods = "LEADER",      action = act.ActivateCopyMode },
         { key = "phys:Space", mods = "LEADER",      action = act.ActivateCommandPalette },
 
@@ -61,8 +64,8 @@ local config = {
         -- Lastly, workspace
         { key = "w", mods = "LEADER",       action = act.ShowLauncherArgs { flags = "FUZZY|WORKSPACES" } },
 
-    },
-    key_tables = {
+    }
+    c.key_tables = {
         resize_pane = {
             { key = "LeftArrow",      action = act.AdjustPaneSize { "Left", 1 } },
             { key = "DownArrow",      action = act.AdjustPaneSize { "Down", 1 } },
@@ -90,13 +93,12 @@ local config = {
             { key = "Enter",  action = "PopKeyTable" },
         }
     }
-}
-
--- I can use the tab navigator (LDR t), but I also want to quickly navigate tabs with index
-for i = 1, 9 do
-    table.insert(config.keys,
-        { key = tostring(i),    mods = "LEADER", action = act.ActivateTab(i - 1)}
-    )
+    -- I can use the tab navigator (LDR t), but I also want to quickly navigate tabs with index
+    for i = 1, 9 do
+        table.insert(c.keys,
+            { key = tostring(i),    mods = "LEADER", action = act.ActivateTab(i - 1)}
+        )
+    end
 end
 
-return config
+return keymaps
