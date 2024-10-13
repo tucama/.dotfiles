@@ -1,74 +1,72 @@
--- Shorten function name
-local keymap = vim.keymap.set
-
 --Remap space as leader key
 vim.g.mapleader = " "
+local map = vim.keymap.set
 
--- keymap("n", "<leader>cv", ":edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
-keymap("n", "<leader>cv", ":cd $XDG_CONFIG_HOME/nvim | edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
-keymap("n", "<leader>rv", ":source $MYVIMRC<CR>", { desc = "Reload Neovim config" })
+-- map("n", "<leader>cv", ":edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
+map("n", "<leader>cv", ":cd $XDG_CONFIG_HOME/nvim | edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
+map("n", "<leader>rv", ":source $MYVIMRC<CR>", { desc = "Reload Neovim config" })
 
-keymap("n", "<leader>cd", ":edit $HOME/.dotfiles<CR>", { desc = "Edit dotfiles" })
+map("n", "<leader>cd", ":edit $HOME/.dotfiles<CR>", { desc = "Edit dotfiles" })
 
-keymap("n", "<C-s>", ":w<CR>", { desc = "Save file" })
+map("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 
-keymap("n", "<leader>o", "o<Esc>k", { desc = "Empty line bellow" })
-keymap("n", "<leader>O", "O<Esc>j", { desc = "Empty line above" })
+map("n", "<leader>o", "o<Esc>k", { desc = "Empty line bellow" })
+map("n", "<leader>O", "O<Esc>j", { desc = "Empty line above" })
 
 -- Resize with arrows
--- keymap("n", "<C-Up>", ":resize -2<CR>")
--- keymap("n", "<C-Down>", ":resize +2<CR>")
--- keymap("n", "<C-Left>", ":vertical resize -2<CR>")
--- keymap("n", "<C-Right>", ":vertical resize +2<CR>")
+-- map("n", "<C-Up>", ":resize -2<CR>")
+-- map("n", "<C-Down>", ":resize +2<CR>")
+-- map("n", "<C-Left>", ":vertical resize -2<CR>")
+-- map("n", "<C-Right>", ":vertical resize +2<CR>")
 
-keymap("n", "J", "mzJ`z")
-keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "<C-u>", "<C-u>zz")
-keymap("n", "<S-Down>", "<C-d>zz")
-keymap("n", "<S-Up>", "<C-u>zz")
-keymap("n", "n", "nzzzv")
-keymap("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "<S-Down>", "<C-d>zz")
+map("n", "<S-Up>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
 -- Navigate buffers
--- keymap("n", "L", ":bnext<CR>")
--- keymap("n", "H", ":bprevious<CR>")
+-- map("n", "L", ":bnext<CR>")
+-- map("n", "H", ":bprevious<CR>")
 
-keymap("n", "<C-i>", ":bnext<CR>", { desc = "Next buffer" })
-keymap("n", "<C-m>", ":bprevious<CR>", { desc = "Previous buffer" })
+map("n", "<C-i>", ":bnext<CR>", { desc = "Next buffer" })
+map("n", "<C-m>", ":bprevious<CR>", { desc = "Previous buffer" })
 
-keymap("n", "<leader>dd", ":bdelete!<CR>", { desc = "Delete buffer" })
-keymap("n", "<leader>df", ":close<CR>", { desc = "Close buffer" })
+map("n", "<leader>dd", ":bdelete!<CR>", { desc = "Delete buffer" })
+map("n", "<leader>df", ":close<CR>", { desc = "Close buffer" })
 
 -- Move text up and down
--- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==")
--- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==")
+-- map("n", "<A-j>", "<Esc>:m .+1<CR>==")
+-- map("n", "<A-k>", "<Esc>:m .-2<CR>==")
 
-keymap("n", "<C-Down>", ":m .+1<CR>==", { desc = "Move line down" })
-keymap("n", "<C-Up>", ":m .-2<CR>==", { desc = "Move line up" })
-keymap("i", "<C-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
-keymap("i", "<C-Up>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
-keymap("v", "<C-Down>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-keymap("v", "<C-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+map("n", "<C-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+map("n", "<C-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+map("i", "<C-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
+map("i", "<C-Up>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
+map("v", "<C-Down>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+map("v", "<C-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv")
-keymap("v", ">", ">gv")
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- Select all
-keymap("n", "<leader><C-a>", "ggVG", { desc = "Select all" })
+map("n", "<leader><C-a>", "ggVG", { desc = "Select all" })
 
 -- Move text up and down
--- keymap("v", "<A-j>", ":m .+1<CR>==")
--- keymap("v", "<A-k>", ":m .-2<CR>==")
+-- map("v", "<A-j>", ":m .+1<CR>==")
+-- map("v", "<A-k>", ":m .-2<CR>==")
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv")
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv")
+map("x", "<A-j>", ":move '>+1<CR>gv-gv")
+map("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = "Turn file executable" })
+map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = "Turn file executable" })
 
 -- Lsp diagnostics
-keymap("n", "<leader>le", ":lua vim.diagnostic.enable()<CR>")
-keymap("n", "<leader>ld", ":lua vim.diagnostic.disable()<CR>")
+map("n", "<leader>le", ":lua vim.diagnostic.enable()<CR>")
+map("n", "<leader>ld", ":lua vim.diagnostic.disable()<CR>")
