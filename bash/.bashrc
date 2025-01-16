@@ -93,14 +93,12 @@ fi
 [ -f $HOME/.config/cargo/env ] && source "$HOME/.config/cargo/env"
 
 
-# start tmux with terminal
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+# # start tmux with terminal
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 
 if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
-export PATH="$PATH:/opt/mopac/bin"
-. /opt/amber24/amber.sh
