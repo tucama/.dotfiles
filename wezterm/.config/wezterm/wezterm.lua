@@ -10,13 +10,21 @@ local config = {}
 -- Use config builder object if possible
 if wezterm.config_builder then config = wezterm.config_builder() end
 
+config.enable_wayland = true
+
 -- Settings
 -- config.default_prog = { fish_path, "-l" }
-config.color_scheme = 'Gruvbox dark, hard (base16)'
+-- config.color_scheme = 'GruvboxDarkHard'
+-- config.color_scheme = 'Gruvbox dark, soft (base16)'
+-- config.color_scheme = 'Fahrenheit'
+-- config.color_scheme = 'Sundried'
+-- config.color_scheme = 'Treehouse (Gogh)'
+-- config.color_scheme = 'Gruber (base16)'
+config.colors = require("ashen")
 config.font = wezterm.font_with_fallback({
   { family = "Hack Nerd Font",       scale = 1, weight = "Medium", },
 })
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.90
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
