@@ -7,17 +7,18 @@ alias vmdt='vmd -dispdev text'
 # rust stuff
 alias cat='bat -p'
 
-if [ -f $CARGO_HOME/bin/lsd ]; then
-    alias l='lsd -lF'
-    alias la='lsd -a'
-    alias ll='lsd -lFah' 
-    alias ls='lsd --color=auto'
-    alias lst='lsd --tree --color=auto --depth 3'
-fi
+# if [ -f $CARGO_HOME/bin/lsd ]; then
+alias l='lsd -lF'
+alias la='lsd -a'
+alias ll='lsd -lFah' 
+alias ls='lsd --color=auto'
+alias lst='lsd --tree --color=auto --depth 3'
+# fi
 
 # connect to server
 alias server="ssh -p 9022 tucamar@150.165.131.12"
 alias sshpc="ssh -p 9123 sshpc@localhost"
+alias studnet="ssh 200220@139.18.143.253"
 
 alias lqqc="ssh arthur@150.165.150.105"
 
@@ -89,5 +90,13 @@ open_with_fzf() {
 bind '"\es": "open_with_fzf\n"'
 bind '"\C-o": "cd_with_fzf\n"'
 bind '"\C-y": "cd_with_fzf_within\n"'
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 eval "$(zoxide init bash)"
