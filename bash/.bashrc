@@ -1,4 +1,3 @@
-[ -f $HOME/.config/bash/bash_variables ] && source $HOME/.config/bash/bash_variables
 
 ############################## beginning of default file ############################################
 # $HOME/.bashrc: executed by bash(1) for non-login shells.
@@ -87,8 +86,10 @@ fi
 
 ############################## end of default file ############################################
 
+
 [ -f $HOME/.config/bash/fzf.bash ] && source $HOME/.config/bash/fzf.bash
 [ -f $HOME/.config/bash/bash_aliases ] && source $HOME/.config/bash/bash_aliases
+[ -f $HOME/.config/bash/bash_variables ] && source $HOME/.config/bash/bash_variables
 [ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
 [ -f $HOME/.config/cargo/env ] && source "$HOME/.config/cargo/env"
 
@@ -102,3 +103,4 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
+. "/home/tucamar/.config/cargo/env"
