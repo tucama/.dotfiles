@@ -1,11 +1,34 @@
-[plugin]
-deps = [
-  { use = "yazi-rs/plugins:full-border", rev = "b659791" },
-  { use = "yazi-rs/plugins:lsar", rev = "b659791" },
-  { use = "yazi-rs/plugins:chmod", rev = "b659791" },
-  { use = "yazi-rs/plugins:max-preview", rev = "49137fe" },
-  { use = "yazi-rs/plugins:hide-preview", rev = "49137fe" },
-]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "b659791"
+hash = ""
 
-[flavor]
-deps = [{ use = "mingo99/tokyonight", rev = "f26ca68" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:lsar"
+rev = "b659791"
+hash = ""
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "b659791"
+hash = ""
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "49137fe"
+hash = ""
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "49137fe"
+hash = ""
+
+[[flavor.deps]]
+use = "mingo99/tokyonight"
+rev = "f26ca68"
+hash = ""
+
+[[flavor.deps]]
+use = "ficd0/ashen:ashen"
+rev = "28ec623"
+hash = "f9aed559dc6820dbc7253253be1bb6d2"
