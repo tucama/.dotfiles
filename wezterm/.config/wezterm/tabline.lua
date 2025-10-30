@@ -18,7 +18,7 @@ function tab.apply_to_config(c)
     tabline.setup({
         options = {
             icons_enabled = true,
-            theme = 'Gruvbox dark, hard (base16)',
+            theme = 'Red Phoenix (terminal.sexy)',
             color_overrides = {},
             section_separators = {
                 left = wezterm.nerdfonts.pl_left_hard_divider,
@@ -35,16 +35,17 @@ function tab.apply_to_config(c)
         },
         sections = {
             tabline_a = { 'mode' },
-            tabline_b = { 'workspace' },
+            tabline_b = { ' ' },
             tabline_c = { ' ' },
             tab_active = {
                 'index',
-                -- { 'parent', padding = 0 },
-                -- '/'
-                { 'cwd', padding = { left = 0, right = 1 } },
-                { 'zoomed', padding = 0 },
+                -- { 'process', padding = 0 },
+                -- '/',
+                -- { 'cwd', padding = { left = 0, right = 1 } },
+                -- { 'zoomed', padding = 7 },
             },
-            tab_inactive = { 'index', { 'process', padding = { left = 0, right = 1 } } },
+            -- tab_inactive = { 'index', { 'process', padding = { left = 0, right = 1 } } },
+            tab_inactive = { 'index' },
             tabline_x = {},
             tabline_y = { 'datetime', 'battery' },
             tabline_z = { 'hostname' },
