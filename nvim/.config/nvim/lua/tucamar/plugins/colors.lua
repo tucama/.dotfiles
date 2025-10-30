@@ -35,8 +35,23 @@ return {
                     DiagnosticSignInfo = { link = "GruvboxAcqua" },
                 },
             })
-            vim.cmd("colorscheme gruvbox")
+            -- vim.cmd("colorscheme gruvbox")
         end,
+    },
+    {
+        "ficcdaf/ashen.nvim",
+         -- optional but recommended,
+         -- pin to the latest stable release:
+         tag = "*",
+         lazy = false,
+         priority = 1000,
+         -- configuration is optional!
+         opts = {
+           -- your settings here
+         },
+         config = function ()
+            vim.cmd("colorscheme ashen")
+         end
     },
     {
         "norcalli/nvim-colorizer.lua",

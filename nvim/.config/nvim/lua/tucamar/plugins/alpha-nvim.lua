@@ -24,8 +24,8 @@ return {
 			dashboard.button("e", "  Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
 			dashboard.button("f", "󰱼  Find File", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("g", "  Grep Word", "<cmd>Telescope live_grep<CR>"),
-			dashboard.button("v", "  Neovim Config", ":cd $XDG_CONFIG_HOME/nvim | edit $MYVIMRC<CR>"),
-			dashboard.button("d", "  Dotfiles Config", ":cd $HOME/.dotfiles | <cmd> Telescope find_files<CR>"),
+			dashboard.button("v", "  Neovim Config", ":cd $XDG_CONFIG_HOME/nvim | Telescope find_files<CR>"),
+			dashboard.button("d", "  Dotfiles Config", ":cd $HOME/.dotfiles | Telescope find_files<CR>"),
 			dashboard.button("q", "  Quit NVIM", "<cmd>qa<CR>"),
 		}
 
