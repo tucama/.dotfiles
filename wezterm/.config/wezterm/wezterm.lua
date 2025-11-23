@@ -23,6 +23,7 @@ config.enable_wayland = true
 config.colors = require("ashen")
 config.font = wezterm.font_with_fallback({
   { family = "Hack Nerd Font",       scale = 1, weight = "Medium", },
+  -- { family = "Firacode",       scale = 1, weight = "Medium", },
 })
 config.window_background_opacity = 0.90
 config.window_decorations = "RESIZE"
