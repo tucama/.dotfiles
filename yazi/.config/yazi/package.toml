@@ -1,9 +1,4 @@
 [[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "b659791"
-hash = ""
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:lsar"
 rev = "b659791"
 hash = ""
@@ -23,10 +18,10 @@ use = "yazi-rs/plugins:hide-preview"
 rev = "49137fe"
 hash = ""
 
-[[flavor.deps]]
-use = "mingo99/tokyonight"
-rev = "f26ca68"
-hash = ""
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "8f1d971"
+hash = "3996fc74044bc44144b323686f887e1"
 
 [[flavor.deps]]
 use = "ficd0/ashen:ashen"
