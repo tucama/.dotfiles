@@ -48,6 +48,10 @@ return {
          -- configuration is optional!
          opts = {
            -- your settings here
+           style_presets = {
+            bold_functions = true,
+            italic_comments = true,
+            },
          },
          config = function ()
             vim.cmd("colorscheme ashen")
@@ -67,7 +71,7 @@ return {
                 desc = "Hightlight selection on yank",
                 pattern = "*",
                 callback = function()
-                    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })
+                    vim.hl.on_yank({ higroup = "IncSearch", timeout = 250 })
                 end,
             })
         end
