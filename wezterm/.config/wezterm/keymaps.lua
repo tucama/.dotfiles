@@ -20,10 +20,10 @@ function keymaps.apply_to_config(c)
         { key = "UpArrow",    mods = "ALT",         action = act.ActivatePaneDirection("Up") },
         { key = "RightArrow", mods = "ALT",         action = act.ActivatePaneDirection("Right") },
 
-        { key = "h",          mods = "ALT",         action = act.ActivatePaneDirection("Left") },
-        { key = "j",          mods = "ALT",         action = act.ActivatePaneDirection("Down") },
-        { key = "k",          mods = "ALT",         action = act.ActivatePaneDirection("Up") },
-        { key = "l",          mods = "ALT",         action = act.ActivatePaneDirection("Right") },
+        { key = "H",          mods = "ALT",         action = act.ActivatePaneDirection("Left") },
+        { key = "J",          mods = "ALT",         action = act.ActivatePaneDirection("Down") },
+        { key = "K",          mods = "ALT",         action = act.ActivatePaneDirection("Up") },
+        { key = "L",          mods = "ALT",         action = act.ActivatePaneDirection("Right") },
 
         { key = "h",          mods = "ALT",        action = act.ActivateTabRelative(-1) },
         { key = "l",          mods = "ALT",        action = act.ActivateTabRelative(1) },
