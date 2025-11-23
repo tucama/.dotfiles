@@ -15,6 +15,9 @@ export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 # Rust's stuff
 export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+# GO
+export GOROOT="/opt/go/"
+export GOPATH="$HOME/.local/share/go"
 # ssh-add
 export SSH_AUTH_STOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # Pipenv
@@ -33,6 +36,7 @@ export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export PATH=$(tr -d $'\n ' <<< "
 $HOME/.local/bin:
 $CARGO_HOME/bin:
+$GOPATH/bin:
 /usr/local/sbin:
 /usr/local/bin:
 /usr/sbin:
