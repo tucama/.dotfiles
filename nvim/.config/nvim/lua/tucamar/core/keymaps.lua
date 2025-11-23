@@ -19,13 +19,13 @@ map("n", "<leader>O", "O<Esc>j", { desc = "Empty line above" })
 -- map("n", "<C-Left>", ":vertical resize -2<CR>")
 -- map("n", "<C-Right>", ":vertical resize +2<CR>")
 
-map("n", "J", "mzJ`z")
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-map("n", "<S-Down>", "<C-d>zz")
-map("n", "<S-Up>", "<C-u>zz")
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z", { desc = "Merge line below"})
+map("n", "<C-d>", "<C-d>zz", { desc = "Move half page up"})
+map("n", "<S-Up>", "<C-u>zz", { desc = "Move half page up"})
+map("n", "<C-u>", "<C-u>zz", { desc = "Move half page down"})
+map("n", "<S-Down>", "<C-d>zz", { desc = "Move half page down"})
+map("n", "n", "nzzzv", { desc = "Next selection"})
+map("n", "N", "Nzzzv", { desc = "Previous selection"})
 
 -- Navigate buffers
 -- map("n", "L", ":bnext<CR>")
@@ -50,8 +50,8 @@ map("v", "<C-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- Visual --
 -- Stay in indent mode
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+map("v", "<", "<gv", { desc = "Indent"})
+map("v", ">", ">gv", { desc = "Unindent"})
 
 -- Select all
 map("n", "<leader><C-a>", "ggVG", { desc = "Select all" })
@@ -60,13 +60,9 @@ map("n", "<leader><C-a>", "ggVG", { desc = "Select all" })
 -- map("v", "<A-j>", ":m .+1<CR>==")
 -- map("v", "<A-k>", ":m .-2<CR>==")
 
--- Visual Block --
--- Move text up and down
-map("x", "<A-j>", ":move '>+1<CR>gv-gv")
-map("x", "<A-k>", ":move '<-2<CR>gv-gv")
-
+-- Turn file executable
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = "Turn file executable" })
 
 -- Lsp diagnostics
-map("n", "<leader>le", ":lua vim.diagnostic.enable()<CR>")
-map("n", "<leader>ld", ":lua vim.diagnostic.disable()<CR>")
+map("n", "<leader>le", ":lua vim.diagnostic.enable()<CR>", { desc = "Enable LSP diagnostic"})
+map("n", "<leader>ld", ":lua vim.diagnostic.disable()<CR>", { desc = "Disable LSP diagnostic"})
