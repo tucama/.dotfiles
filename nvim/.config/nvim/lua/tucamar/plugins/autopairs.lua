@@ -44,12 +44,12 @@ return {
     {
         "tpope/vim-surround",
   event = { "BufReadPre", "BufNewFile" },
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
+  -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
     },
     {
         "windwp/nvim-ts-autotag",
   event = { "BufReadPre", "BufNewFile" },
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
+  -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
     }
 
 }

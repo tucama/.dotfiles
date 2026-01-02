@@ -1,5 +1,43 @@
 return {
     {
+        "norcalli/nvim-colorizer.lua",
+        event = { "BufReadPre", "BufNewFile" },
+        config = true,
+    },
+    {
+        "ficcdaf/ashen.nvim",
+         -- optional but recommended,
+         -- pin to the latest stable release:
+         tag = "*",
+         lazy = false,
+         priority = 1000,
+         -- configuration is optional!
+         opts = {
+           -- your settings here
+           style_presets = {
+            bold_functions = true,
+            italic_comments = true,
+            },
+         },
+         config = function ()
+            vim.cmd("colorscheme ashen")
+         end
+    },
+    {
+        "unblevable/quick-scope",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function ()
+            vim.api.nvim_create_autocmd("TextYankPost", {
+                group = vim.api.nvim_create_augroup("highlight_yank", {}),
+                desc = "Hightlight selection on yank",
+                pattern = "*",
+                callback = function()
+                    vim.hl.on_yank({ higroup = "IncSearch", timeout = 250 })
+                end,
+            })
+        end
+    },
+    {
         "ellisonleao/gruvbox.nvim",
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
@@ -38,43 +76,4 @@ return {
             -- vim.cmd("colorscheme gruvbox")
         end,
     },
-    {
-        "ficcdaf/ashen.nvim",
-         -- optional but recommended,
-         -- pin to the latest stable release:
-         tag = "*",
-         lazy = false,
-         priority = 1000,
-         -- configuration is optional!
-         opts = {
-           -- your settings here
-           style_presets = {
-            bold_functions = true,
-            italic_comments = true,
-            },
-         },
-         config = function ()
-            vim.cmd("colorscheme ashen")
-         end
-    },
-    {
-        "norcalli/nvim-colorizer.lua",
-        event = { "BufReadPre", "BufNewFile" },
-        config = true,
-    },
-    {
-        "unblevable/quick-scope",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function ()
-            vim.api.nvim_create_autocmd("TextYankPost", {
-                group = vim.api.nvim_create_augroup("highlight_yank", {}),
-                desc = "Hightlight selection on yank",
-                pattern = "*",
-                callback = function()
-                    vim.hl.on_yank({ higroup = "IncSearch", timeout = 250 })
-                end,
-            })
-        end
-    },
-
 }

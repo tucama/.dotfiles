@@ -18,7 +18,8 @@ function tab.apply_to_config(c)
     tabline.setup({
         options = {
             icons_enabled = true,
-            theme = 'Red Phoenix (terminal.sexy)',
+            theme = c.colors,
+            -- theme = 'ashen',
             color_overrides = {},
             section_separators = {
                 left = wezterm.nerdfonts.pl_left_hard_divider,
@@ -34,20 +35,26 @@ function tab.apply_to_config(c)
             },
         },
         sections = {
-            tabline_a = { 'mode' },
+            tabline_a = { ' ' },
             tabline_b = { ' ' },
             tabline_c = { ' ' },
             tab_active = {
                 'index',
-                -- { 'process', padding = 0 },
-                -- '/',
                 -- { 'cwd', padding = { left = 0, right = 1 } },
-                -- { 'zoomed', padding = 7 },
+                -- '$',
+                { 'process', padding = 0 },
+                { 'zoomed', padding = 10 },
             },
             -- tab_inactive = { 'index', { 'process', padding = { left = 0, right = 1 } } },
-            tab_inactive = { 'index' },
+            tab_inactive = {
+                'index',
+                { 'process', padding = 0 },
+                -- '/',
+                -- { 'cwd', padding = { left = 0, right = 1 } },
+                { 'zoomed', padding = 7 },
+            },
             tabline_x = {},
-            tabline_y = { 'datetime', 'battery' },
+            tabline_y = { 'battery' },
             tabline_z = { 'hostname' },
         },
         extensions = {},

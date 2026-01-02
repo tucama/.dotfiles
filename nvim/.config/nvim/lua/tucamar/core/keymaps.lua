@@ -2,11 +2,16 @@
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
+-- Not working well with whichkey
+map("n", "<leader>w", "<C-w>", { desc = "Window control" })
+
+-- Use Alpha NVIM to access this
 -- map("n", "<leader>cv", ":edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
-map("n", "<leader>cv", ":cd $XDG_CONFIG_HOME/nvim | edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
+-- map("n", "<leader>cv", ":cd $XDG_CONFIG_HOME/nvim | edit $MYVIMRC<CR>", { desc = "Edit Neovim config" })
+-- map("n", "<leader>cd", ":edit $HOME/.dotfiles<CR>", { desc = "Edit dotfiles" })
+
 map("n", "<leader>rv", ":source $MYVIMRC<CR>", { desc = "Reload Neovim config" })
 
-map("n", "<leader>cd", ":edit $HOME/.dotfiles<CR>", { desc = "Edit dotfiles" })
 
 map("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 
@@ -64,5 +69,5 @@ map("n", "<leader><C-a>", "ggVG", { desc = "Select all" })
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { desc = "Turn file executable" })
 
 -- Lsp diagnostics
-map("n", "<leader>le", ":lua vim.diagnostic.enable()<CR>", { desc = "Enable LSP diagnostic"})
-map("n", "<leader>ld", ":lua vim.diagnostic.disable()<CR>", { desc = "Disable LSP diagnostic"})
+map("n", "<leader>le", ":lua vim.diagnostic.toggle()<CR>", { desc = "Enable LSP diagnostic"})
+-- map("n", "<leader>ld", ":lua vim.diagnostic.disable()<CR>", { desc = "Disable LSP diagnostic"})
