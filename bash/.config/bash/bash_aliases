@@ -1,6 +1,12 @@
 # My aliases
 alias dot='cd $HOME/.dotfiles/'
 
+alias py="python3"
+
+# Conda
+alias condastart=". /opt/miniconda3/bin/activate"
+alias unileipzig="condastart && conda activate unileipzig"
+
 alias v='nvim'
 alias vmdt='vmd -dispdev text'
 
@@ -54,6 +60,8 @@ extract () {
   fi
 }
 
+### FZF
+
 export FZF_DEFAULT_COMMAND="fd --type f --color=never --hidden"
 export FZF_DEFAULT_OPTS="--layout=reverse --border"
 
@@ -68,28 +76,20 @@ if [ -f "${CARGO_HOME}/bin/zoxide" ]; then
     cd_with_fzf(){
       z $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
     }
-
-    cd_with_fzf_within(){
-      z "$(fd -t d -H | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
-    }
 else
     cd_with_fzf(){
       cd $HOME && cd "$(fd -t d | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
     }
-
-    cd_with_fzf_within(){
-      cd "$(fd -t d -H | fzf --height=50% --layout=reverse --preview="lsd --tree --depth 3 {}")"
-    }
 fi
 
-open_with_fzf() {
-    fd -t f -H -I $HOME/Documents/ | fzf --layout=reverse -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+select_file_fzf(){
+    '$(fd -t f --max-depth 2 | fzf --height=50% --layout=reverse --preview="cat")'
 }
 
 
-bind '"\es": "open_with_fzf\n"'
+
+# CTRL-O to zd with fzf
 bind '"\C-o": "cd_with_fzf\n"'
-bind '"\C-y": "cd_with_fzf_within\n"'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

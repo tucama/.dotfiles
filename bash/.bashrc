@@ -87,12 +87,11 @@ fi
 ############################## end of default file ############################################
 
 
-[ -f $HOME/.config/bash/fzf.bash ] && source $HOME/.config/bash/fzf.bash
 [ -f $HOME/.config/bash/bash_aliases ] && source $HOME/.config/bash/bash_aliases
 [ -f $HOME/.config/bash/bash_variables ] && source $HOME/.config/bash/bash_variables
-[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
+[ -f $HOME/.config/bash/fzf.bash ] && source $HOME/.config/bash/fzf.bash
+# [ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
 [ -f $HOME/.config/cargo/env ] && source "$HOME/.config/cargo/env"
-
 
 # # start tmux with terminal
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
@@ -104,3 +103,4 @@ if [ "$SHLVL" = 1 ]; then
 fi
 
 . "/home/tucamar/.config/cargo/env"
+

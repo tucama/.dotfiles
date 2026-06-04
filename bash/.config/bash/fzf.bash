@@ -10,4 +10,5 @@ fi
 
 # Key bindings
 # ------------
-source "$HOME/.config/fzf/shell/key-bindings.bash"
+# source "$HOME/.config/bash/fzf-keymap.bash"
+eval "$(fzf --bash)"
