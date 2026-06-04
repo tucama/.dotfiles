@@ -10,8 +10,6 @@ This repository keeps my shell, editor, terminal, and desktop configuration in o
 
 ![fastfetch](./images/fastfetch.png)
 
-Place your alpha.nvim screenshot in the repository and reference it here.
-
 ![alpha.nvim](./images/nvim.png)
 
 ![lsd](./images/lsd.png)
