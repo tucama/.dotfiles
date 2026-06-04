@@ -1,6 +1,6 @@
 # Dotfiles
 
-A personal collection of Linux desktop and terminal configuration files, organized with GNU Stow.
+A personal collection of Linux desktop and terminal configuration files
 
 ## Overview
 
@@ -9,16 +9,12 @@ This repository keeps my shell, editor, terminal, and desktop configuration in o
 ### fastfetch
 Place your fastfetch screenshot in the repository and reference it here.
 
-```md
 ![fastfetch](./images/fastfetch.png)
-```
 
 ### alpha.nvim
 Place your alpha.nvim screenshot in the repository and reference it here.
 
-```md
 ![alpha.nvim](./images/nvim.png)
-```
 
 ## Managed with GNU Stow
 
