@@ -41,15 +41,17 @@ return {
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
     },
+
     {
-        "tpope/vim-surround",
-  event = { "BufReadPre", "BufNewFile" },
+    "kylechui/nvim-surround",
+    event = { "BufReadPre", "BufNewFile" },
   -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
     },
+
     {
-        "windwp/nvim-ts-autotag",
-  event = { "BufReadPre", "BufNewFile" },
-  -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+ -- version = "*", -- Use for stability; omit to use `main` branch for the latest features
     }
 
 }

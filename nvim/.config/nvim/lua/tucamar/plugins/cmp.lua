@@ -78,7 +78,10 @@ return {
 				select = false,
 			},
 			window = {
-				documentation = cmp.config.window.bordered(),
+                documentation = {
+                    border = 'rounded',
+                    scrollbar = '║',
+                }
 			},
 			experimental = {
 				ghost_text = true,

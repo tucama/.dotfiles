@@ -22,6 +22,7 @@ return {
 		dashboard.section.buttons.val = {
 			dashboard.button("n", "  New File", "<cmd>ene<CR>"),
 			dashboard.button("e", "  Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
+			dashboard.button("p", "󰱼  Find Project", "<cmd>Telescope projects<CR>"),
 			dashboard.button("f", "󰱼  Find File", "<cmd>Telescope find_files<CR>"),
 			dashboard.button("g", "  Grep Word", "<cmd>Telescope live_grep<CR>"),
 			dashboard.button("v", "  Neovim Config", ":cd $XDG_CONFIG_HOME/nvim | Telescope find_files<CR>"),
