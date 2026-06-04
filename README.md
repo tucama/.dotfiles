@@ -6,15 +6,15 @@ A personal collection of Linux desktop and terminal configuration files
 
 This repository keeps my shell, editor, terminal, and desktop configuration in one place so I can reproduce the same environment on a new machine with minimal effort. Each tool lives in its own package and is symlinked into the right location with Stow.
 
-### fastfetch
-Place your fastfetch screenshot in the repository and reference it here.
+### How it looks
 
 ![fastfetch](./images/fastfetch.png)
 
-### alpha.nvim
 Place your alpha.nvim screenshot in the repository and reference it here.
 
 ![alpha.nvim](./images/nvim.png)
+
+![lsd](./images/lsd.png)
 
 ## Managed with GNU Stow
 
